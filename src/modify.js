@@ -10,7 +10,13 @@ const clickCounterHandler = () => {
   console.log(clickButton.dataset.clicks);
 };
 
-const handleKeydown = () => {};
+const handleKeydown = (e) => {
+  console.log(e);
+  const keydownTracker = document.querySelector('#keydown-tracker');
+  if (e.code === 'KeyA') keydownTracker.textContent = 'You pressed KeyA';
+  if (e.code === 'Space') keydownTracker.textContent = 'You pressed Space';
+  if (e.code === 'Enter') keydownTracker.textContent = 'You pressed Enter';
+};
 
 // We've started this one for you
 const handleDelegation = (event) => {
@@ -27,6 +33,9 @@ const main = () => {
 
   const incrementingButton = document.querySelector('#click-button');
   incrementingButton.addEventListener('click', clickCounterHandler);
+
+  const p = document.querySelector('body');
+  p.addEventListener('keydown', handleKeydown);
 };
 
 main();
