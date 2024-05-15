@@ -7,7 +7,10 @@ const testSuiteName = 'From Scratch Tests';
 const scoresDir = path.join(__dirname, '..', 'scores');
 const scoreCounter = new ScoreCounter(testSuiteName, scoresDir);
 
-const indexHtmlText = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
+const indexHtmlText = fs.readFileSync(
+  path.resolve(__dirname, './index.html'),
+  'utf8'
+);
 
 describe(testSuiteName, () => {
   beforeEach(() => {
@@ -56,7 +59,6 @@ describe(testSuiteName, () => {
     incrementorButton.click();
     expect(results.textContent).toBe('2');
 
-    incrementorButton.click();
     incrementorButton.click();
     incrementorButton.click();
     incrementorButton.click();
