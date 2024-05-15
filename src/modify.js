@@ -32,16 +32,16 @@ const inlineHandler = () => {
 // We've started this one for you
 const handleDelegation = (event) => {
   const resultSpan = document.querySelector('#delegation-result');
-  resultSpan.textContent = event.target.textContent;
+  if (event.target.matches('.grid-item') === true) {
+    resultSpan.textContent = event.target.textContent;
+    console.log(resultSpan.textContent);
+  }
 };
 
 const addNewRandomNumber = () => {};
 
 // Select the elements and attach your event handlers inside main
 const main = () => {
-  const delegationContainer = document.querySelector('#delegation');
-  delegationContainer.addEventListener('click', handleDelegation);
-
   const incrementingButton = document.querySelector('#click-button');
   incrementingButton.addEventListener('click', clickCounterHandler);
 
@@ -50,6 +50,24 @@ const main = () => {
 
   const inlineButton = document.querySelector('#inline-example');
   inlineButton.addEventListener('click', inlineHandler);
+
+  const delegationContainer = document.querySelector('#delegation');
+  delegationContainer.addEventListener('click', handleDelegation);
+
+  const upDelegation = document.querySelector('#up');
+  upDelegation.addEventListener('click', handleDelegation);
+
+  const leftDelegation = document.querySelector('#left');
+  leftDelegation.addEventListener('click', handleDelegation);
+
+  const middleDelegation = document.querySelector('#middle');
+  middleDelegation.addEventListener('click', handleDelegation);
+
+  const rightDelegation = document.querySelector('#right');
+  rightDelegation.addEventListener('click', handleDelegation);
+
+  const downDelegation = document.querySelector('#down');
+  downDelegation.addEventListener('click', handleDelegation);
 };
 
 main();
