@@ -18,6 +18,17 @@ const handleKeydown = (e) => {
   if (e.code === 'Enter') keydownTracker.textContent = 'You pressed Enter';
 };
 
+const inlineHandler = () => {
+  const inlineButton = document.querySelector('#inline-example');
+  inlineButton.dataset.clicks = Number(inlineButton.dataset.clicks) + 1;
+  if (inlineButton.dataset.clicks < 2) {
+    inlineButton.textContent = `I've been clicked ${inlineButton.dataset.clicks} time.`;
+  } else {
+    inlineButton.textContent = `I've been clicked ${inlineButton.dataset.clicks} times!`;
+  }
+  console.log(inlineButton.dataset.clicks);
+};
+
 // We've started this one for you
 const handleDelegation = (event) => {
   const resultSpan = document.querySelector('#delegation-result');
@@ -36,6 +47,9 @@ const main = () => {
 
   const p = document.querySelector('body');
   p.addEventListener('keydown', handleKeydown);
+
+  const inlineButton = document.querySelector('#inline-example');
+  inlineButton.addEventListener('click', inlineHandler);
 };
 
 main();
