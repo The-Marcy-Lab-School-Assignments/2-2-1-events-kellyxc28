@@ -38,7 +38,12 @@ const handleDelegation = (event) => {
   }
 };
 
-const addNewRandomNumber = () => {};
+const addNewRandomNumber = () => {
+  const ul = document.getElementById('random-numbers');
+  const li = document.createElement('li');
+  li.textContent = Math.random();
+  ul.append(li);
+};
 
 // Select the elements and attach your event handlers inside main
 const main = () => {
@@ -53,6 +58,9 @@ const main = () => {
 
   const delegationContainer = document.querySelector('#delegation');
   delegationContainer.addEventListener('click', handleDelegation);
+
+  const addRandomNum = document.querySelector('#add-random-num');
+  addRandomNum.addEventListener('click', addNewRandomNumber);
 };
 
 main();
