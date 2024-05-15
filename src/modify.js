@@ -53,21 +53,6 @@ const main = () => {
 
   const delegationContainer = document.querySelector('#delegation');
   delegationContainer.addEventListener('click', handleDelegation);
-
-  const upDelegation = document.querySelector('#up');
-  upDelegation.addEventListener('click', handleDelegation);
-
-  const leftDelegation = document.querySelector('#left');
-  leftDelegation.addEventListener('click', handleDelegation);
-
-  const middleDelegation = document.querySelector('#middle');
-  middleDelegation.addEventListener('click', handleDelegation);
-
-  const rightDelegation = document.querySelector('#right');
-  rightDelegation.addEventListener('click', handleDelegation);
-
-  const downDelegation = document.querySelector('#down');
-  downDelegation.addEventListener('click', handleDelegation);
 };
 
 main();
