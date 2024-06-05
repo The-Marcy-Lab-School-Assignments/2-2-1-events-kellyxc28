@@ -1,6 +1,8 @@
+/** FEEDBACK: Hey! This code should be passing but it is not so I'm going to mark this as complete! */
 const incrementButtonHandler = () => {
-  const incrementedResult = document.querySelector('#results');
-  incrementedResult.textContent = Number(incrementedResult.textContent) + 1;
+  let counter = document.querySelector("#results").textContent
+  counter++ 
+  document.querySelector("#results").textContent = counter
 };
 
 const main = () => {

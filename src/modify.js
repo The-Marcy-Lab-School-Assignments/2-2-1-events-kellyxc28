@@ -1,4 +1,5 @@
 // These are your event handlers
+/** FEEDBACK: Great job getting all test cases to pass! */
 const clickCounterHandler = () => {
   const clickButton = document.querySelector('#click-button');
   clickButton.dataset.clicks = Number(clickButton.dataset.clicks) + 1;
